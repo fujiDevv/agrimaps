@@ -11,8 +11,10 @@
     "lint": "bunx eslint src/"
   },
   "devDependencies": {
+    "@eslint/js": "^10.0.1",
     "@types/bun": "latest",
     "eslint": "^10.4.0",
+    "globals": "^17.6.0",
     "jest": "^30.4.2",
     "nodemon": "^3.1.14",
     "supertest": "^7.2.2"

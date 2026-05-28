@@ -29,6 +29,8 @@ class ForecastRequest(BaseModel):
 
 
 class ForecastResponse(BaseModel):
+    model_config = {"protected_namespaces": ()}
+    
     commodity_id: str
     commodity_name: str
     model_type: str
