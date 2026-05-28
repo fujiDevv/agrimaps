@@ -72,59 +72,44 @@ This repository contains the **backend infrastructure only**: the Node.js REST A
 
 ## System Architecture
 
-```
-┌─────────────────────────────────────────────────────────────┐
-│                        CLIENTS                              │
-│                                                             │
-│   ┌──────────────┐  ┌──────────────┐  ┌──────────────┐     │
-│   │  DA Field     │  │  DA Monitor  │  │  Consumer /  │     │
-│   │  Personnel    │  │  Admin       │  │  Vendor      │     │
-│   │  (Mobile)     │  │  (Desktop)   │  │  (Mobile)    │     │
-│   └──────┬───────┘  └──────┬───────┘  └──────┬───────┘     │
-│          │                 │                  │              │
-└──────────┼─────────────────┼──────────────────┼──────────────┘
-           │                 │                  │
-           ▼                 ▼                  ▼
-┌─────────────────────────────────────────────────────────────┐
-│                    NODE.JS BACKEND (Port 3000)               │
-│                                                             │
-│   ┌───────────┐ ┌────────────┐ ┌──────────┐ ┌───────────┐  │
-│   │   Auth    │ │ Submissions│ │ Commodit. │ │  Markets  │  │
-│   │  Module   │ │   Module   │ │  Module   │ │  Module   │  │
-│   └───────────┘ └────────────┘ └──────────┘ └───────────┘  │
-│   ┌───────────┐ ┌────────────┐ ┌──────────────────────────┐ │
-│   │ Forecasts │ │  Reports   │ │      Dashboard           │ │
-│   │  Module   │ │   Module   │ │       Module             │ │
-│   └─────┬─────┘ └────────────┘ └──────────────────────────┘ │
-│         │                                                   │
-│         │ HTTP REST                                         │
-│         ▼                                                   │
-│   ┌───────────────────────────────────────────┐             │
-│   │    PYTHON FORECASTING SERVICE (Port 8000) │             │
-│   │                                           │             │
-│   │  ┌──────────────┐  ┌───────────────────┐ │             │
-│   │  │ Preprocessing│  │  Model Selection  │ │             │
-│   │  │   Pipeline   │──│  ARIMA / SARIMA   │ │             │
-│   │  └──────────────┘  └───────────────────┘ │             │
-│   └───────────────────┬───────────────────────┘             │
-│                       │                                     │
-└───────────────────────┼─────────────────────────────────────┘
-                        │
-                        ▼
-          ┌──────────────────────────┐
-          │   PostgreSQL 15 + PostGIS │
-          │       (Port 5432)        │
-          │                          │
-          │  ┌────────┐ ┌─────────┐ │
-          │  │ Tables │ │  Views  │ │
-          │  └────────┘ └─────────┘ │
-          └──────────────────────────┘
-                        │
-                        ▼
-          ┌──────────────────────────┐
-          │    Redis (Port 6379)     │
-          │    Caching Layer         │
-          └──────────────────────────┘
+```mermaid
+flowchart TD
+    %% Clients
+    subgraph Clients["CLIENTS"]
+        direction LR
+        Field["DA Field Personnel\n(Mobile)"]
+        Admin["DA Monitor / Admin\n(Desktop)"]
+        Consumer["Consumer / Vendor\n(Mobile)"]
+    end
+
+    %% Backend
+    subgraph Backend["NODE.JS BACKEND (Port 3000)"]
+        Auth["Auth Module"]
+        Submissions["Submissions Module"]
+        Commodities["Commodities Module"]
+        Markets["Markets Module"]
+        Forecasts["Forecasts Module"]
+        Reports["Reports Module"]
+        Dashboard["Dashboard Module"]
+    end
+
+    %% Forecasting Service
+    subgraph MLService["PYTHON FORECASTING SERVICE (Port 8000)"]
+        Preprocessing["Preprocessing Pipeline"]
+        Model["Model Selection\nARIMA / SARIMA"]
+        Preprocessing --- Model
+    end
+
+    %% Infrastructure
+    DB[("PostgreSQL 15 + PostGIS\n(Port 5432)")]
+    Cache[("Redis (Port 6379)\nCaching Layer")]
+
+    %% Relationships
+    Clients -->|HTTP REST| Backend
+    Backend -->|HTTP REST| MLService
+    MLService --> DB
+    Backend --> DB
+    Backend --> Cache
 ```
 
 ---
@@ -407,85 +392,49 @@ markets (standalone, referenced by submissions and historical_prices)
 
 Raw Bantay Presyo data passes through four stages before model fitting:
 
-```
-Raw Data
-   │
-   ▼
-┌──────────────────────────┐
-│  1. Name Canonicalization│  Resolves ~30 naming inconsistencies
-│     (local/imported tags,│  from the DA's 2024 taxonomy revision
-│      variant spellings)  │
-└──────────┬───────────────┘
-           │
-           ▼
-┌──────────────────────────┐
-│  2. Date Range Completion│  Fills missing weeks in the date series
-│     (weekly frequency)   │  to create a continuous time index
-└──────────┬───────────────┘
-           │
-           ▼
-┌──────────────────────────┐
-│  3. Outlier Detection    │  IQR method with 2.5x multiplier
-│     (flag, not remove)   │  Flags outliers for downstream filtering
-└──────────┬───────────────┘
-           │
-           ▼
-┌──────────────────────────┐
-│  4. Forward-Fill         │  Fills gaps of ≤2 consecutive missing
-│     Imputation           │  weeks with the previous week's value
-└──────────┬───────────────┘
-           │
-           ▼
-   Clean Series → Model Selection
+```mermaid
+flowchart TD
+    Raw["Raw Data"]
+    
+    subgraph Preprocessing["Preprocessing Pipeline"]
+        Step1["1. Name Canonicalization\nResolves ~30 naming inconsistencies\nfrom the DA's 2024 taxonomy revision"]
+        Step2["2. Date Range Completion\nFills missing weeks in the date series\nto create a continuous time index"]
+        Step3["3. Outlier Detection\nIQR method with 2.5x multiplier\nFlags outliers for downstream filtering"]
+        Step4["4. Forward-Fill Imputation\nFills gaps of ≤2 consecutive missing\nweeks with the previous week's value"]
+        
+        Step1 --> Step2 --> Step3 --> Step4
+    end
+
+    Raw --> Preprocessing
+    Preprocessing --> Out["Clean Series → Model Selection"]
 ```
 
 ### Model Selection Flow
 
-```
-Clean Price Series
-       │
-       ▼
-┌────────────────────────┐
-│ Eligibility Check      │
-│  • ≥ 156 weeks (3 yrs)│
-│  • Fill rate ≥ 80%    │
-│  • CV < 50%           │──── Fail → Skip commodity
-└────────┬───────────────┘
-         │ Pass
-         ▼
-┌────────────────────────┐
-│ Stationarity Testing   │
-│  • ADF test            │  → Determines differencing order (d)
-│  • KPSS test           │
-└────────┬───────────────┘
-         │
-         ▼
-┌────────────────────────┐
-│ Seasonal Decomposition │
-│  • Period = 52 (weekly)│
-│  • F-test for          │  → ARIMA (non-seasonal)
-│    significance        │  → SARIMA (seasonal)
-└────────┬───────────────┘
-         │
-         ▼
-┌────────────────────────┐
-│ Model Fitting          │
-│  • Grid search over    │
-│    (p, d, q) / (P,D,Q)│
-│  • Select by AIC/BIC   │
-└────────┬───────────────┘
-         │
-         ▼
-┌────────────────────────┐
-│ Walk-Forward Validation│
-│  • 5-fold expanding    │
-│    window              │
-│  • Metrics: RMSE, MAE, │
-│    MAPE                │
-└────────┬───────────────┘
-         │
-         ▼
-   Forecast Output
+```mermaid
+flowchart TD
+    Clean["Clean Price Series"]
+    
+    Eligibility{"Eligibility Check\n• ≥ 156 weeks (3 yrs)\n• Fill rate ≥ 80%\n• CV < 50%"}
+    Skip["Fail → Skip commodity"]
+    
+    Stationarity["Stationarity Testing\n• ADF test\n• KPSS test\n→ Determines differencing order (d)"]
+    
+    Seasonal["Seasonal Decomposition\n• Period = 52 (weekly)\n• F-test for significance\n→ ARIMA (non-seasonal)\n→ SARIMA (seasonal)"]
+    
+    Fitting["Model Fitting\n• Grid search over (p, d, q) / (P,D,Q)\n• Select by AIC/BIC"]
+    
+    Validation["Walk-Forward Validation\n• 5-fold expanding window\n• Metrics: RMSE, MAE, MAPE"]
+    
+    Output["Forecast Output"]
+    
+    Clean --> Eligibility
+    Eligibility -->|Fail| Skip
+    Eligibility -->|Pass| Stationarity
+    Stationarity --> Seasonal
+    Seasonal --> Fitting
+    Fitting --> Validation
+    Validation --> Output
 ```
 
 ### Forecast Output
