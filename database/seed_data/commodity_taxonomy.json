@@ -1,0 +1,306 @@
+[
+    {
+        "commodity_name": "Rice - Regular Milled",
+        "canonical_name": "Rice - Regular Milled",
+        "category": "rice",
+        "unit_of_measure": "per_kg",
+        "is_imported": false,
+        "is_forecastable": true
+    },
+    {
+        "commodity_name": "Rice - Well Milled",
+        "canonical_name": "Rice - Well Milled",
+        "category": "rice",
+        "unit_of_measure": "per_kg",
+        "is_imported": false,
+        "is_forecastable": true
+    },
+    {
+        "commodity_name": "Rice - Special",
+        "canonical_name": "Rice - Special",
+        "category": "rice",
+        "unit_of_measure": "per_kg",
+        "is_imported": false,
+        "is_forecastable": true
+    },
+    {
+        "commodity_name": "Rice - Sinandomeng",
+        "canonical_name": "Rice - Sinandomeng",
+        "category": "rice",
+        "unit_of_measure": "per_kg",
+        "is_imported": false,
+        "is_forecastable": true
+    },
+    {
+        "commodity_name": "Ampalaya",
+        "canonical_name": "Ampalaya",
+        "category": "vegetables",
+        "unit_of_measure": "per_kg",
+        "is_imported": false,
+        "is_forecastable": true
+    },
+    {
+        "commodity_name": "Cabbage",
+        "canonical_name": "Cabbage",
+        "category": "vegetables",
+        "unit_of_measure": "per_kg",
+        "is_imported": false,
+        "is_forecastable": true
+    },
+    {
+        "commodity_name": "Carrots",
+        "canonical_name": "Carrots",
+        "category": "vegetables",
+        "unit_of_measure": "per_kg",
+        "is_imported": false,
+        "is_forecastable": true
+    },
+    {
+        "commodity_name": "Eggplant",
+        "canonical_name": "Eggplant",
+        "category": "vegetables",
+        "unit_of_measure": "per_kg",
+        "is_imported": false,
+        "is_forecastable": true
+    },
+    {
+        "commodity_name": "Sitao",
+        "canonical_name": "Sitao",
+        "category": "vegetables",
+        "unit_of_measure": "per_kg",
+        "is_imported": false,
+        "is_forecastable": true
+    },
+    {
+        "commodity_name": "Pechay",
+        "canonical_name": "Pechay",
+        "category": "vegetables",
+        "unit_of_measure": "per_kg",
+        "is_imported": false,
+        "is_forecastable": true
+    },
+    {
+        "commodity_name": "Squash",
+        "canonical_name": "Squash",
+        "category": "vegetables",
+        "unit_of_measure": "per_kg",
+        "is_imported": false,
+        "is_forecastable": true
+    },
+    {
+        "commodity_name": "Tomato",
+        "canonical_name": "Tomato",
+        "category": "vegetables",
+        "unit_of_measure": "per_kg",
+        "is_imported": false,
+        "is_forecastable": true
+    },
+    {
+        "commodity_name": "Potato",
+        "canonical_name": "Potato",
+        "category": "vegetables",
+        "unit_of_measure": "per_kg",
+        "is_imported": false,
+        "is_forecastable": true
+    },
+    {
+        "commodity_name": "Bell Pepper",
+        "canonical_name": "Bell Pepper",
+        "category": "vegetables",
+        "unit_of_measure": "per_kg",
+        "is_imported": false,
+        "is_forecastable": true
+    },
+    {
+        "commodity_name": "Cucumber",
+        "canonical_name": "Cucumber",
+        "category": "vegetables",
+        "unit_of_measure": "per_kg",
+        "is_imported": false,
+        "is_forecastable": true
+    },
+    {
+        "commodity_name": "String Beans",
+        "canonical_name": "String Beans",
+        "category": "vegetables",
+        "unit_of_measure": "per_kg",
+        "is_imported": false,
+        "is_forecastable": true
+    },
+    {
+        "commodity_name": "Red Onion",
+        "canonical_name": "Red Onion",
+        "category": "spices",
+        "unit_of_measure": "per_kg",
+        "is_imported": false,
+        "is_forecastable": true
+    },
+    {
+        "commodity_name": "White Onion",
+        "canonical_name": "White Onion",
+        "category": "spices",
+        "unit_of_measure": "per_kg",
+        "is_imported": false,
+        "is_forecastable": true
+    },
+    {
+        "commodity_name": "Garlic",
+        "canonical_name": "Garlic",
+        "category": "spices",
+        "unit_of_measure": "per_kg",
+        "is_imported": false,
+        "is_forecastable": true
+    },
+    {
+        "commodity_name": "Ginger",
+        "canonical_name": "Ginger",
+        "category": "spices",
+        "unit_of_measure": "per_kg",
+        "is_imported": false,
+        "is_forecastable": true
+    },
+    {
+        "commodity_name": "Bangus",
+        "canonical_name": "Bangus",
+        "category": "fish",
+        "unit_of_measure": "per_kg",
+        "is_imported": false,
+        "is_forecastable": true
+    },
+    {
+        "commodity_name": "Galunggong",
+        "canonical_name": "Galunggong",
+        "category": "fish",
+        "unit_of_measure": "per_kg",
+        "is_imported": false,
+        "is_forecastable": true
+    },
+    {
+        "commodity_name": "Tilapia",
+        "canonical_name": "Tilapia",
+        "category": "fish",
+        "unit_of_measure": "per_kg",
+        "is_imported": false,
+        "is_forecastable": true
+    },
+    {
+        "commodity_name": "Pusit",
+        "canonical_name": "Pusit",
+        "category": "fish",
+        "unit_of_measure": "per_kg",
+        "is_imported": false,
+        "is_forecastable": true
+    },
+    {
+        "commodity_name": "Chicken (Whole)",
+        "canonical_name": "Chicken (Whole)",
+        "category": "meat_poultry",
+        "unit_of_measure": "per_kg",
+        "is_imported": false,
+        "is_forecastable": true
+    },
+    {
+        "commodity_name": "Pork (Liempo)",
+        "canonical_name": "Pork (Liempo)",
+        "category": "meat_poultry",
+        "unit_of_measure": "per_kg",
+        "is_imported": false,
+        "is_forecastable": true
+    },
+    {
+        "commodity_name": "Pork (Kasim)",
+        "canonical_name": "Pork (Kasim)",
+        "category": "meat_poultry",
+        "unit_of_measure": "per_kg",
+        "is_imported": false,
+        "is_forecastable": true
+    },
+    {
+        "commodity_name": "Beef (Brisket)",
+        "canonical_name": "Beef (Brisket)",
+        "category": "meat_poultry",
+        "unit_of_measure": "per_kg",
+        "is_imported": false,
+        "is_forecastable": true
+    },
+    {
+        "commodity_name": "Egg (Chicken)",
+        "canonical_name": "Egg (Chicken)",
+        "category": "meat_poultry",
+        "unit_of_measure": "per_piece",
+        "is_imported": false,
+        "is_forecastable": true
+    },
+    {
+        "commodity_name": "Banana (Lakatan)",
+        "canonical_name": "Banana (Lakatan)",
+        "category": "fruits",
+        "unit_of_measure": "per_kg",
+        "is_imported": false,
+        "is_forecastable": true
+    },
+    {
+        "commodity_name": "Calamansi",
+        "canonical_name": "Calamansi",
+        "category": "fruits",
+        "unit_of_measure": "per_kg",
+        "is_imported": false,
+        "is_forecastable": true
+    },
+    {
+        "commodity_name": "Mango (Carabao)",
+        "canonical_name": "Mango (Carabao)",
+        "category": "fruits",
+        "unit_of_measure": "per_kg",
+        "is_imported": false,
+        "is_forecastable": true
+    },
+    {
+        "commodity_name": "Papaya",
+        "canonical_name": "Papaya",
+        "category": "fruits",
+        "unit_of_measure": "per_kg",
+        "is_imported": false,
+        "is_forecastable": true
+    },
+    {
+        "commodity_name": "Watermelon",
+        "canonical_name": "Watermelon",
+        "category": "fruits",
+        "unit_of_measure": "per_kg",
+        "is_imported": false,
+        "is_forecastable": true
+    },
+    {
+        "commodity_name": "Sugar - Washed",
+        "canonical_name": "Sugar - Washed",
+        "category": "sugar_oil",
+        "unit_of_measure": "per_kg",
+        "is_imported": false,
+        "is_forecastable": true
+    },
+    {
+        "commodity_name": "Sugar - Refined",
+        "canonical_name": "Sugar - Refined",
+        "category": "sugar_oil",
+        "unit_of_measure": "per_kg",
+        "is_imported": false,
+        "is_forecastable": true
+    },
+    {
+        "commodity_name": "Sugar - Brown",
+        "canonical_name": "Sugar - Brown",
+        "category": "sugar_oil",
+        "unit_of_measure": "per_kg",
+        "is_imported": false,
+        "is_forecastable": true
+    },
+    {
+        "commodity_name": "Cooking Oil - Palm",
+        "canonical_name": "Cooking Oil - Palm",
+        "category": "sugar_oil",
+        "unit_of_measure": "per_liter",
+        "is_imported": false,
+        "is_forecastable": true
+    }
+]

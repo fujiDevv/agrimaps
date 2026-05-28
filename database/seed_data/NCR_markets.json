@@ -1,0 +1,154 @@
+[
+    {
+        "market_name": "Divisoria Public Market",
+        "market_code": "NCR-MKT-001",
+        "city": "Manila",
+        "latitude": 14.6042,
+        "longitude": 120.9726,
+        "address": "Divisoria, Tondo, Manila"
+    },
+    {
+        "market_name": "Quiapo Market",
+        "market_code": "NCR-MKT-002",
+        "city": "Manila",
+        "latitude": 14.5995,
+        "longitude": 120.9842,
+        "address": "Quiapo, Manila"
+    },
+    {
+        "market_name": "Cartimar Market",
+        "market_code": "NCR-MKT-003",
+        "city": "Pasay",
+        "latitude": 14.5547,
+        "longitude": 120.9933,
+        "address": "Leveriza, Pasay"
+    },
+    {
+        "market_name": "Mega Q-Mart",
+        "market_code": "NCR-MKT-004",
+        "city": "Quezon City",
+        "latitude": 14.6284,
+        "longitude": 121.0445,
+        "address": "EDSA, Quezon City"
+    },
+    {
+        "market_name": "Commonwealth Market",
+        "market_code": "NCR-MKT-005",
+        "city": "Quezon City",
+        "latitude": 14.6760,
+        "longitude": 121.0834,
+        "address": "Commonwealth, Quezon City"
+    },
+    {
+        "market_name": "Guadalupe Public Market",
+        "market_code": "NCR-MKT-006",
+        "city": "Makati",
+        "latitude": 14.5642,
+        "longitude": 121.0437,
+        "address": "Guadalupe, Makati"
+    },
+    {
+        "market_name": "Pasig Public Market",
+        "market_code": "NCR-MKT-007",
+        "city": "Pasig",
+        "latitude": 14.5764,
+        "longitude": 121.0851,
+        "address": "Pasig City"
+    },
+    {
+        "market_name": "Mandaluyong Public Market",
+        "market_code": "NCR-MKT-008",
+        "city": "Mandaluyong",
+        "latitude": 14.5794,
+        "longitude": 121.0359,
+        "address": "Mandaluyong City"
+    },
+    {
+        "market_name": "Marikina Public Market",
+        "market_code": "NCR-MKT-009",
+        "city": "Marikina",
+        "latitude": 14.6507,
+        "longitude": 121.0964,
+        "address": "Marikina City"
+    },
+    {
+        "market_name": "Navotas Fish Port Complex",
+        "market_code": "NCR-MKT-010",
+        "city": "Navotas",
+        "latitude": 14.6619,
+        "longitude": 120.9447,
+        "address": "Navotas City"
+    },
+    {
+        "market_name": "Malabon Public Market",
+        "market_code": "NCR-MKT-011",
+        "city": "Malabon",
+        "latitude": 14.6680,
+        "longitude": 120.9562,
+        "address": "Malabon City"
+    },
+    {
+        "market_name": "Valenzuela Public Market",
+        "market_code": "NCR-MKT-012",
+        "city": "Valenzuela",
+        "latitude": 14.7000,
+        "longitude": 120.9830,
+        "address": "Valenzuela City"
+    },
+    {
+        "market_name": "Caloocan Public Market",
+        "market_code": "NCR-MKT-013",
+        "city": "Caloocan",
+        "latitude": 14.6500,
+        "longitude": 120.9830,
+        "address": "Caloocan City"
+    },
+    {
+        "market_name": "Alabang Public Market",
+        "market_code": "NCR-MKT-014",
+        "city": "Muntinlupa",
+        "latitude": 14.4168,
+        "longitude": 121.0440,
+        "address": "Alabang, Muntinlupa"
+    },
+    {
+        "market_name": "Las Pinas Public Market",
+        "market_code": "NCR-MKT-015",
+        "city": "Las Pinas",
+        "latitude": 14.4500,
+        "longitude": 120.9833,
+        "address": "Las Pinas City"
+    },
+    {
+        "market_name": "Paranaque Public Market",
+        "market_code": "NCR-MKT-016",
+        "city": "Paranaque",
+        "latitude": 14.4800,
+        "longitude": 121.0167,
+        "address": "Paranaque City"
+    },
+    {
+        "market_name": "Taguig Public Market",
+        "market_code": "NCR-MKT-017",
+        "city": "Taguig",
+        "latitude": 14.5200,
+        "longitude": 121.0500,
+        "address": "Taguig City"
+    },
+    {
+        "market_name": "Pateros Public Market",
+        "market_code": "NCR-MKT-018",
+        "city": "Pateros",
+        "latitude": 14.5447,
+        "longitude": 121.0699,
+        "address": "Pateros"
+    },
+    {
+        "market_name": "San Juan Public Market",
+        "market_code": "NCR-MKT-019",
+        "city": "San Juan",
+        "latitude": 14.6000,
+        "longitude": 121.0333,
+        "address": "San Juan City"
+    }
+]
