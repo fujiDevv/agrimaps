@@ -1,4 +1,3 @@
-```markdown
 # Agrimaps — Agricultural Market Intelligence System Backend
 
 **Backend API, ARIMA/SARIMA Forecasting Microservice, and Database Infrastructure for NCR Public Market Commodity Price Monitoring**
@@ -892,4 +891,3 @@ All rights reserved by the authors. For academic and research use only.
 ---
 
 *Built with the goal of transforming agricultural price data from a static repository into a decision-support platform for NCR public market stakeholders, in alignment with United Nations Sustainable Development Goal 2: Zero Hunger.*
-```
