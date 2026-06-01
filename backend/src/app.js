@@ -16,7 +16,13 @@ const forecastRoutes = require("./modules/forecasts/forecastRoutes");
 const reportRoutes = require("./modules/reports/reportRoutes");
 const dashboardRoutes = require("./modules/dashboard/dashboardRoutes");
 
+const swaggerUi = require("swagger-ui-express");
+const swaggerSpec = require("./config/swagger");
+
 const app = express();
+
+// ── Swagger API Documentation ─────────────────────────
+app.use("/api/docs", swaggerUi.serve, swaggerUi.setup(swaggerSpec));
 
 // ── Security ──────────────────────────────────────────
 app.use(helmet());

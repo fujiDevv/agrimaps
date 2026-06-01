@@ -10,6 +10,6 @@ module.exports = {
     JWT_EXPIRES_IN: process.env.JWT_EXPIRES_IN || "8h",
     FORECASTING_SERVICE_URL:
         process.env.FORECASTING_SERVICE_URL || "<http://localhost:8000>",
-    CORS_ORIGIN: process.env.CORS_ORIGIN || "<http://localhost:5173>",
+    CORS_ORIGIN: process.env.CORS_ORIGIN || "*",
     LOG_LEVEL: process.env.LOG_LEVEL || "info",
 };

@@ -5,7 +5,14 @@
 
 version: 2
 updates:
-  - package-ecosystem: "" # See documentation for possible values
-    directory: "/" # Location of package manifests
+  # Maintain dependencies for Node.js Backend
+  - package-ecosystem: "bun"
+    directory: "/backend"
+    schedule:
+      interval: "weekly"
+
+  # Maintain dependencies for Python Forecasting Service
+  - package-ecosystem: "pip"
+    directory: "/forecasting-service"
     schedule:
       interval: "weekly"
