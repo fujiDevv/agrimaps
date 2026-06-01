@@ -1,5 +1,10 @@
 # Agrimaps — Agricultural Market Intelligence System Backend
 
+![Node.js](https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=nodedotjs&logoColor=white)
+![Python](https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white)
+![PostgreSQL](https://img.shields.io/badge/PostgreSQL-316192?style=for-the-badge&logo=postgresql&logoColor=white)
+![Redis](https://img.shields.io/badge/Redis-DC382D?style=for-the-badge&logo=redis&logoColor=white)
+
 **Backend API, ARIMA/SARIMA Forecasting Microservice, and Database Infrastructure for NCR Public Market Commodity Price Monitoring**
 
 Built for the research project: *"Agrimaps: Agricultural Market Intelligence System for NCR Using Geomapping, Mobile Monitoring, and Predictive Forecasting"* — José Rizal University, College of Computer Studies and Engineering, SY 2025–2026.

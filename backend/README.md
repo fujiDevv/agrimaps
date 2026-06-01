@@ -1,5 +1,8 @@
 # Agrimaps Backend (Powered by Bun)
 
+![Bun](https://img.shields.io/badge/Bun-000000?style=for-the-badge&logo=bun&logoColor=white)
+![Express.js](https://img.shields.io/badge/Express.js-404D59?style=for-the-badge&logo=express&logoColor=white)
+
 This directory contains the Node.js API for Agrimaps. It has been migrated to use [Bun](https://bun.sh/) for blazing-fast execution, dependency management, and hot-reloading.
 
 ## Prerequisites
